@@ -9,6 +9,10 @@ import JsonValidator from "./pages/JsonValidator";
 import Base64Converter from "./pages/Base64Converter";
 import CaseConverter from "./pages/CaseConverter";
 import QRCodeGenerator from "./pages/QRCodeGenerator";
+import GrammarChecker from "./pages/GrammarChecker";
+import TextFormatter from "./pages/TextFormatter";
+import MarkdownConverter from "./pages/MarkdownConverter";
+import WordCounter from "./pages/WordCounter";
 
 /* Design System: Modern Minimalist with Neon Accents
    - Light theme with off-white background (#F8F8F8)
@@ -26,6 +30,10 @@ function Router() {
       <Route path={"/tool/base64"} component={Base64Converter} />
       <Route path={"/tool/case-converter"} component={CaseConverter} />
       <Route path={"/tool/qr-code"} component={QRCodeGenerator} />
+      <Route path={"/tool/grammar-checker"} component={GrammarChecker} />
+      <Route path={"/tool/text-formatter"} component={TextFormatter} />
+      <Route path={"/tool/markdown-converter"} component={MarkdownConverter} />
+      <Route path={"/tool/word-counter"} component={WordCounter} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

@@ -35,6 +35,10 @@ const TOOLS: ToolWithRoute[] = [
   { id: '2', name: 'Case Converter', description: 'Convert text to different cases (uppercase, lowercase, title case)', category: 'Text Tools', icon: '🔤', color: 'from-cyan-400 to-blue-500', route: '/tool/case-converter' },
   { id: '3', name: 'Text Flipper', description: 'Invert or reverse text instantly', category: 'Text Tools', icon: '🔄', color: 'from-cyan-400 to-blue-500' },
   { id: '4', name: 'HTML Stripper', description: 'Remove HTML tags from text', category: 'Text Tools', icon: '🏷️', color: 'from-cyan-400 to-blue-500' },
+  { id: '21', name: 'Grammar Checker', description: 'Check grammar and spelling with real-time suggestions', category: 'Text Tools', icon: '✍️', color: 'from-cyan-400 to-blue-500', route: '/tool/grammar-checker' },
+  { id: '22', name: 'Text Formatter', description: 'Apply formatting transformations to text', category: 'Text Tools', icon: '📐', color: 'from-cyan-400 to-blue-500', route: '/tool/text-formatter' },
+  { id: '23', name: 'Word Counter', description: 'Analyze text with detailed statistics and word frequency', category: 'Text Tools', icon: '📊', color: 'from-cyan-400 to-blue-500', route: '/tool/word-counter' },
+  { id: '24', name: 'Markdown Converter', description: 'Convert Markdown to HTML with real-time preview', category: 'Text Tools', icon: '📝', color: 'from-cyan-400 to-blue-500', route: '/tool/markdown-converter' },
 
   // Converters
   { id: '5', name: 'CSV to JSON', description: 'Convert CSV files to JSON format', category: 'Converters', icon: '🔀', color: 'from-magenta-400 to-pink-500' },
@@ -43,9 +47,9 @@ const TOOLS: ToolWithRoute[] = [
   { id: '8', name: 'UTF8 Converter', description: 'Convert UTF8 to multiple formats', category: 'Converters', icon: '🔤', color: 'from-magenta-400 to-pink-500' },
 
   // Calculators
-  { id: '9', name: 'Matrix Calculator', description: 'Perform matrix operations', category: 'Calculators', icon: '📊', color: 'from-lime-400 to-green-500' },
+  { id: '9', name: 'Matrix Calculator', description: 'Perform matrix operations', category: 'Calculators', icon: '📈', color: 'from-lime-400 to-green-500' },
   { id: '10', name: 'Prime Factors', description: 'Calculate prime factorization', category: 'Calculators', icon: '🔢', color: 'from-lime-400 to-green-500' },
-  { id: '11', name: 'Percentage Calculator', description: 'Calculate percentages easily', category: 'Calculators', icon: '📈', color: 'from-lime-400 to-green-500' },
+  { id: '11', name: 'Percentage Calculator', description: 'Calculate percentages easily', category: 'Calculators', icon: '%', color: 'from-lime-400 to-green-500' },
   { id: '12', name: 'Tip Calculator', description: 'Calculate tips and split bills', category: 'Calculators', icon: '💰', color: 'from-lime-400 to-green-500' },
 
   // Web Tools
