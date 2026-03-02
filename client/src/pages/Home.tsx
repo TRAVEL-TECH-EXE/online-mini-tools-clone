@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLocation } from 'wouter';
+import { toast } from 'sonner';
 
 /* Design System: Modern Minimalist with Neon Accents
    - Primary Accent: Cyan (#00D9FF) for main actions
@@ -23,17 +25,21 @@ interface Tool {
   color: string;
 }
 
-const TOOLS: Tool[] = [
+interface ToolWithRoute extends Tool {
+  route?: string;
+}
+
+const TOOLS: ToolWithRoute[] = [
   // Text Tools
   { id: '1', name: 'Text Repeater', description: 'Repeat text multiple times with custom separators', category: 'Text Tools', icon: '📝', color: 'from-cyan-400 to-blue-500' },
-  { id: '2', name: 'Case Converter', description: 'Convert text to different cases (uppercase, lowercase, title case)', category: 'Text Tools', icon: '🔤', color: 'from-cyan-400 to-blue-500' },
+  { id: '2', name: 'Case Converter', description: 'Convert text to different cases (uppercase, lowercase, title case)', category: 'Text Tools', icon: '🔤', color: 'from-cyan-400 to-blue-500', route: '/tool/case-converter' },
   { id: '3', name: 'Text Flipper', description: 'Invert or reverse text instantly', category: 'Text Tools', icon: '🔄', color: 'from-cyan-400 to-blue-500' },
   { id: '4', name: 'HTML Stripper', description: 'Remove HTML tags from text', category: 'Text Tools', icon: '🏷️', color: 'from-cyan-400 to-blue-500' },
 
   // Converters
   { id: '5', name: 'CSV to JSON', description: 'Convert CSV files to JSON format', category: 'Converters', icon: '🔀', color: 'from-magenta-400 to-pink-500' },
-  { id: '6', name: 'JSON Validator', description: 'Validate and format JSON syntax', category: 'Converters', icon: '✓', color: 'from-magenta-400 to-pink-500' },
-  { id: '7', name: 'Base64 Encoder', description: 'Encode and decode Base64 strings', category: 'Converters', icon: '🔐', color: 'from-magenta-400 to-pink-500' },
+  { id: '6', name: 'JSON Validator', description: 'Validate and format JSON syntax', category: 'Converters', icon: '✓', color: 'from-magenta-400 to-pink-500', route: '/tool/json-validator' },
+  { id: '7', name: 'Base64 Encoder', description: 'Encode and decode Base64 strings', category: 'Converters', icon: '🔐', color: 'from-magenta-400 to-pink-500', route: '/tool/base64' },
   { id: '8', name: 'UTF8 Converter', description: 'Convert UTF8 to multiple formats', category: 'Converters', icon: '🔤', color: 'from-magenta-400 to-pink-500' },
 
   // Calculators
@@ -43,7 +49,7 @@ const TOOLS: Tool[] = [
   { id: '12', name: 'Tip Calculator', description: 'Calculate tips and split bills', category: 'Calculators', icon: '💰', color: 'from-lime-400 to-green-500' },
 
   // Web Tools
-  { id: '13', name: 'QR Code Generator', description: 'Generate QR codes instantly', category: 'Web Tools', icon: '📱', color: 'from-purple-400 to-indigo-500' },
+  { id: '13', name: 'QR Code Generator', description: 'Generate QR codes instantly', category: 'Web Tools', icon: '📱', color: 'from-purple-400 to-indigo-500', route: '/tool/qr-code' },
   { id: '14', name: 'Meta Tag Generator', description: 'Generate SEO meta tags', category: 'Web Tools', icon: '🏷️', color: 'from-purple-400 to-indigo-500' },
   { id: '15', name: 'Favicon Generator', description: 'Create favicons for your website', category: 'Web Tools', icon: '🎨', color: 'from-purple-400 to-indigo-500' },
   { id: '16', name: 'URL Slug Generator', description: 'Generate SEO-friendly URL slugs', category: 'Web Tools', icon: '🔗', color: 'from-purple-400 to-indigo-500' },
@@ -58,6 +64,7 @@ const TOOLS: Tool[] = [
 const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools'];
 
 export default function Home() {
+  const [, navigate] = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -215,6 +222,7 @@ export default function Home() {
                       isFavorite={true}
                       onToggleFavorite={toggleFavorite}
                       viewMode={viewMode}
+                      onNavigate={navigate}
                     />
                   ))}
                 </div>
@@ -235,6 +243,7 @@ export default function Home() {
                       isFavorite={false}
                       onToggleFavorite={toggleFavorite}
                       viewMode={viewMode}
+                      onNavigate={navigate}
                     />
                   ))}
                 </div>
@@ -287,13 +296,14 @@ export default function Home() {
 }
 
 interface ToolCardProps {
-  tool: Tool;
+  tool: ToolWithRoute;
   isFavorite: boolean;
   onToggleFavorite: (id: string) => void;
   viewMode: 'grid' | 'list';
+  onNavigate: (path: string) => void;
 }
 
-function ToolCard({ tool, isFavorite, onToggleFavorite, viewMode }: ToolCardProps) {
+function ToolCard({ tool, isFavorite, onToggleFavorite, viewMode, onNavigate }: ToolCardProps) {
   return (
     <div
       className={`tool-card group ${
@@ -339,6 +349,7 @@ function ToolCard({ tool, isFavorite, onToggleFavorite, viewMode }: ToolCardProp
               <Button
                 size="sm"
                 className="bg-gradient-to-r from-cyan-400 to-magenta-500 text-white hover:shadow-lg neon-glow"
+                onClick={() => tool.route ? onNavigate(tool.route) : toast.info('Tool coming soon!')}
               >
                 Open Tool
               </Button>
