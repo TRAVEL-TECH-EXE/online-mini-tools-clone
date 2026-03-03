@@ -118,8 +118,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply transition-colors duration-300 ease-in-out;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground transition-colors duration-300 ease-in-out;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -162,6 +165,18 @@
     box-shadow: 0 0 20px rgba(0, 217, 255, 0.8), 0 0 30px rgba(255, 0, 110, 0.4);
   }
 
+  .dark .neon-glow {
+    box-shadow: 0 0 12px rgba(0, 217, 255, 0.5);
+  }
+
+  .dark .neon-glow:hover {
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8), 0 0 32px rgba(255, 0, 110, 0.5);
+  }
+
+  .dark .neon-glow:focus {
+    box-shadow: 0 0 24px rgba(0, 217, 255, 1), 0 0 40px rgba(255, 0, 110, 0.6);
+  }
+
   /* Tool card hover effect */
   .tool-card {
     @apply transition-all duration-200 ease-out;
@@ -171,6 +186,10 @@
   .tool-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 8px 24px rgba(0, 217, 255, 0.2), 0 0 12px rgba(255, 0, 110, 0.1);
+  }
+
+  .dark .tool-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 217, 255, 0.4), 0 0 12px rgba(255, 0, 110, 0.2);
   }
 
   @media (min-width: 640px) {

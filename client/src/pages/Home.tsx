@@ -1,11 +1,12 @@
 import { useState, useMemo, useEffect } from 'react';
-import { Search, Heart, Home as HomeIcon, Grid3X3, List } from 'lucide-react';
+import { Search, Heart, Home as HomeIcon, Grid3X3, List, Moon, Sun } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLocation } from 'wouter';
 import { toast } from 'sonner';
+import { useTheme } from '@/contexts/ThemeContext';
 
 /* Design System: Modern Minimalist with Neon Accents
    - Primary Accent: Cyan (#00D9FF) for main actions
@@ -69,6 +70,7 @@ const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools
 
 export default function Home() {
   const [, navigate] = useLocation();
+  const { theme, toggleTheme } = useTheme();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [favorites, setFavorites] = useState<string[]>([]);
@@ -110,7 +112,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Navigation */}
-      <header className="sticky top-0 z-50 bg-white border-b border-border shadow-sm">
+      <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm transition-colors duration-300">
         <div className="container py-4">
           <div className="flex items-center justify-between gap-4">
             <div className="flex items-center gap-2">
@@ -119,16 +121,31 @@ export default function Home() {
               </div>
               <h1 className="text-2xl font-bold text-foreground">OnlineMiniTools</h1>
             </div>
-            <Button
-              variant="outline"
-              size="sm"
-              className="gap-2 neon-glow border-cyan-400 text-cyan-600 hover:bg-cyan-50"
-              onClick={() => setSelectedCategory('All')}
-            >
-              <Heart className="w-4 h-4" />
-              <span className="hidden sm:inline">Favorites ({favorites.length})</span>
-              <span className="sm:hidden">{favorites.length}</span>
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 neon-glow border-cyan-400 text-cyan-600 hover:bg-cyan-50 dark:text-cyan-400 dark:hover:bg-cyan-950"
+                onClick={() => setSelectedCategory('All')}
+              >
+                <Heart className="w-4 h-4" />
+                <span className="hidden sm:inline">Favorites ({favorites.length})</span>
+                <span className="sm:hidden">{favorites.length}</span>
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                className="gap-2 neon-glow border-cyan-400 text-cyan-600 hover:bg-cyan-50 dark:text-cyan-400 dark:hover:bg-cyan-950"
+                onClick={toggleTheme}
+                title={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+              >
+                {theme === 'light' ? (
+                  <Moon className="w-4 h-4" />
+                ) : (
+                  <Sun className="w-4 h-4" />
+                )}
+              </Button>
+            </div>
           </div>
         </div>
       </header>
@@ -147,7 +164,7 @@ export default function Home() {
             {/* Search Bar */}
             <div className="relative group">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-magenta-400 to-lime-400 rounded-full blur opacity-0 group-focus-within:opacity-100 transition duration-300" />
-              <div className="relative bg-white rounded-full flex items-center px-6 py-3 shadow-lg">
+              <div className="relative bg-card rounded-full flex items-center px-6 py-3 shadow-lg transition-colors duration-300">
                 <Search className="w-5 h-5 text-muted-foreground mr-3" />
                 <input
                   type="text"
@@ -170,7 +187,7 @@ export default function Home() {
                   className={`px-4 py-2 rounded-full font-medium transition-all duration-200 whitespace-nowrap ${
                     selectedCategory === category
                       ? 'bg-gradient-to-r from-cyan-400 to-magenta-500 text-white shadow-lg neon-glow'
-                      : 'bg-white text-foreground border border-border hover:border-cyan-400 hover:text-cyan-600'
+                      : 'bg-card text-foreground border border-border hover:border-cyan-400 hover:text-cyan-600 dark:hover:border-cyan-500'
                   }`}
                 >
                   {category}
