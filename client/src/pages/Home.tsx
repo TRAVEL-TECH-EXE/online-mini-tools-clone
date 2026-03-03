@@ -47,10 +47,10 @@ const TOOLS: ToolWithRoute[] = [
   { id: '8', name: 'UTF8 Converter', description: 'Convert UTF8 to multiple formats', category: 'Converters', icon: '🔤', color: 'from-magenta-400 to-pink-500' },
 
   // Calculators
-  { id: '9', name: 'Matrix Calculator', description: 'Perform matrix operations', category: 'Calculators', icon: '📈', color: 'from-lime-400 to-green-500' },
-  { id: '10', name: 'Prime Factors', description: 'Calculate prime factorization', category: 'Calculators', icon: '🔢', color: 'from-lime-400 to-green-500' },
-  { id: '11', name: 'Percentage Calculator', description: 'Calculate percentages easily', category: 'Calculators', icon: '%', color: 'from-lime-400 to-green-500' },
-  { id: '12', name: 'Tip Calculator', description: 'Calculate tips and split bills', category: 'Calculators', icon: '💰', color: 'from-lime-400 to-green-500' },
+  { id: '9', name: 'Matrix Calculator', description: 'Perform matrix operations', category: 'Calculators', icon: '📈', color: 'from-lime-400 to-green-500', route: '/tool/matrix-calculator' },
+  { id: '10', name: 'Prime Factors', description: 'Calculate prime factorization', category: 'Calculators', icon: '🔢', color: 'from-lime-400 to-green-500', route: '/tool/prime-factors' },
+  { id: '11', name: 'Percentage Calculator', description: 'Calculate percentages easily', category: 'Calculators', icon: '%', color: 'from-lime-400 to-green-500', route: '/tool/percentage-calculator' },
+  { id: '12', name: 'Tip Calculator', description: 'Calculate tips and split bills', category: 'Calculators', icon: '💰', color: 'from-lime-400 to-green-500', route: '/tool/tip-calculator' },
 
   // Web Tools
   { id: '13', name: 'QR Code Generator', description: 'Generate QR codes instantly', category: 'Web Tools', icon: '📱', color: 'from-purple-400 to-indigo-500', route: '/tool/qr-code' },
@@ -59,10 +59,10 @@ const TOOLS: ToolWithRoute[] = [
   { id: '16', name: 'URL Slug Generator', description: 'Generate SEO-friendly URL slugs', category: 'Web Tools', icon: '🔗', color: 'from-purple-400 to-indigo-500' },
 
   // Image Tools
-  { id: '17', name: 'Image to Base64', description: 'Convert images to Base64 encoding', category: 'Image Tools', icon: '🖼️', color: 'from-orange-400 to-red-500' },
+  { id: '17', name: 'Image to Base64', description: 'Convert images to Base64 encoding', category: 'Image Tools', icon: '🖼️', color: 'from-orange-400 to-red-500', route: '/tool/image-to-base64' },
   { id: '18', name: 'Crop Image', description: 'Crop images online with precision', category: 'Image Tools', icon: '✂️', color: 'from-orange-400 to-red-500' },
-  { id: '19', name: 'Image Converter', description: 'Convert between image formats', category: 'Image Tools', icon: '🔄', color: 'from-orange-400 to-red-500' },
-  { id: '20', name: 'Color Extractor', description: 'Extract colors from images', category: 'Image Tools', icon: '🎨', color: 'from-orange-400 to-red-500' },
+  { id: '19', name: 'Image Converter', description: 'Convert between image formats', category: 'Image Tools', icon: '🔄', color: 'from-orange-400 to-red-500', route: '/tool/image-converter' },
+  { id: '20', name: 'Color Extractor', description: 'Extract colors from images', category: 'Image Tools', icon: '🎨', color: 'from-orange-400 to-red-500', route: '/tool/color-extractor' },
 ];
 
 const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools'];
