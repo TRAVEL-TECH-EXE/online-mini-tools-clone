@@ -64,9 +64,12 @@ const TOOLS: ToolWithRoute[] = [
   { id: '18', name: 'Crop Image', description: 'Crop images online with precision', category: 'Image Tools', icon: '✂️', color: 'from-orange-400 to-red-500' },
   { id: '19', name: 'Image Converter', description: 'Convert between image formats', category: 'Image Tools', icon: '🔄', color: 'from-orange-400 to-red-500', route: '/tool/image-converter' },
   { id: '20', name: 'Color Extractor', description: 'Extract colors from images', category: 'Image Tools', icon: '🎨', color: 'from-orange-400 to-red-500', route: '/tool/color-extractor' },
+
+  // AI Tools
+  { id: '25', name: 'AI Prompt Generator', description: 'Create and optimize prompts for AI models', category: 'AI Tools', icon: '⚡', color: 'from-cyan-400 to-magenta-500', route: '/tool/ai-prompt-generator' },
 ];
 
-const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools'];
+const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools', 'AI Tools'];
 
 export default function Home() {
   const [, navigate] = useLocation();
