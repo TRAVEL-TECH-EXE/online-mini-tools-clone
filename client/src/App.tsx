@@ -21,6 +21,8 @@ import ImageToBase64 from "./pages/ImageToBase64";
 import ImageConverter from "./pages/ImageConverter";
 import ColorExtractor from "./pages/ColorExtractor";
 import AIPromptGenerator from "./pages/AIPromptGenerator";
+import CSVtoJSON from "./pages/CSVtoJSON";
+import YAMLConverter from "./pages/YAMLConverter";
 
 /* Design System: Modern Minimalist with Neon Accents
    - Light theme with off-white background (#F8F8F8)
@@ -49,7 +51,9 @@ function Router() {
       <Route path={"/tool/image-to-base64"} component={ImageToBase64} />
       <Route path={"/tool/image-converter"} component={ImageConverter} />
       <Route path={"/tool/color-extractor"} component={ColorExtractor} />
-      <Route path={"/tool/ai-prompt-generator"} component={AIPromptGenerator} />
+       <Route path={"tool/ai-prompt-generator"} component={AIPromptGenerator} />
+      <Route path={"tool/csv-to-json"} component={CSVtoJSON} />
+      <Route path={"tool/yaml-converter"} component={YAMLConverter} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

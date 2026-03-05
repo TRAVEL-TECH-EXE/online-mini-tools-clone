@@ -42,7 +42,7 @@ const TOOLS: ToolWithRoute[] = [
   { id: '24', name: 'Markdown Converter', description: 'Convert Markdown to HTML with real-time preview', category: 'Text Tools', icon: '📝', color: 'from-cyan-400 to-blue-500', route: '/tool/markdown-converter' },
 
   // Converters
-  { id: '5', name: 'CSV to JSON', description: 'Convert CSV files to JSON format', category: 'Converters', icon: '🔀', color: 'from-magenta-400 to-pink-500' },
+  { id: '5', name: 'CSV to JSON', description: 'Convert CSV files to JSON format', category: 'Converters', icon: '🔀', color: 'from-magenta-400 to-pink-500', route: '/tool/csv-to-json' },
   { id: '6', name: 'JSON Validator', description: 'Validate and format JSON syntax', category: 'Converters', icon: '✓', color: 'from-magenta-400 to-pink-500', route: '/tool/json-validator' },
   { id: '7', name: 'Base64 Encoder', description: 'Encode and decode Base64 strings', category: 'Converters', icon: '🔐', color: 'from-magenta-400 to-pink-500', route: '/tool/base64' },
   { id: '8', name: 'UTF8 Converter', description: 'Convert UTF8 to multiple formats', category: 'Converters', icon: '🔤', color: 'from-magenta-400 to-pink-500' },
@@ -67,6 +67,9 @@ const TOOLS: ToolWithRoute[] = [
 
   // AI Tools
   { id: '25', name: 'AI Prompt Generator', description: 'Create and optimize prompts for AI models', category: 'AI Tools', icon: '⚡', color: 'from-cyan-400 to-magenta-500', route: '/tool/ai-prompt-generator' },
+
+  // Additional Converters
+  { id: '26', name: 'YAML Converter', description: 'Convert between YAML and JSON formats', category: 'Converters', icon: '📄', color: 'from-magenta-400 to-pink-500', route: '/tool/yaml-converter' },
 ];
 
 const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools', 'AI Tools'];
