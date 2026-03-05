@@ -55,9 +55,9 @@ const TOOLS: ToolWithRoute[] = [
 
   // Web Tools
   { id: '13', name: 'QR Code Generator', description: 'Generate QR codes instantly', category: 'Web Tools', icon: '📱', color: 'from-purple-400 to-indigo-500', route: '/tool/qr-code' },
-  { id: '14', name: 'Meta Tag Generator', description: 'Generate SEO meta tags', category: 'Web Tools', icon: '🏷️', color: 'from-purple-400 to-indigo-500' },
-  { id: '15', name: 'Favicon Generator', description: 'Create favicons for your website', category: 'Web Tools', icon: '🎨', color: 'from-purple-400 to-indigo-500' },
-  { id: '16', name: 'URL Slug Generator', description: 'Generate SEO-friendly URL slugs', category: 'Web Tools', icon: '🔗', color: 'from-purple-400 to-indigo-500' },
+  { id: '14', name: 'Meta Tag Generator', description: 'Generate SEO meta tags', category: 'Web Tools', icon: '🏷️', color: 'from-purple-400 to-indigo-500', route: '/tool/meta-tag-generator' },
+  { id: '15', name: 'Favicon Generator', description: 'Create favicons for your website', category: 'Web Tools', icon: '🎨', color: 'from-purple-400 to-indigo-500', route: '/tool/favicon-generator' },
+  { id: '16', name: 'URL Slug Generator', description: 'Generate SEO-friendly URL slugs', category: 'Web Tools', icon: '🔗', color: 'from-purple-400 to-indigo-500', route: '/tool/url-slug-generator' },
 
   // Image Tools
   { id: '17', name: 'Image to Base64', description: 'Convert images to Base64 encoding', category: 'Image Tools', icon: '🖼️', color: 'from-orange-400 to-red-500', route: '/tool/image-to-base64' },
