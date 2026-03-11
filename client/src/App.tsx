@@ -26,6 +26,7 @@ import YAMLConverter from "./pages/YAMLConverter";
 import MetaTagGenerator from "./pages/MetaTagGenerator";
 import FaviconGenerator from "./pages/FaviconGenerator";
 import URLSlugGenerator from "./pages/URLSlugGenerator";
+import TextRepeater from "./pages/TextRepeater";
 
 /* Design System: Modern Minimalist with Neon Accents
    - Light theme with off-white background (#F8F8F8)
@@ -60,6 +61,7 @@ function Router() {
       <Route path={"tool/meta-tag-generator"} component={MetaTagGenerator} />
       <Route path={"tool/favicon-generator"} component={FaviconGenerator} />
       <Route path={"tool/url-slug-generator"} component={URLSlugGenerator} />
+      <Route path={"tool/text-repeater"} component={TextRepeater} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

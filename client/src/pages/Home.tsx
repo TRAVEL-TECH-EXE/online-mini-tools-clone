@@ -32,7 +32,7 @@ interface ToolWithRoute extends Tool {
 
 const TOOLS: ToolWithRoute[] = [
   // Text Tools
-  { id: '1', name: 'Text Repeater', description: 'Repeat text multiple times with custom separators', category: 'Text Tools', icon: '📝', color: 'from-cyan-400 to-blue-500' },
+  { id: '1', name: 'Text Repeater', description: 'Repeat text multiple times with custom separators', category: 'Text Tools', icon: '📝', color: 'from-cyan-400 to-blue-500', route: '/tool/text-repeater' },
   { id: '2', name: 'Case Converter', description: 'Convert text to different cases (uppercase, lowercase, title case)', category: 'Text Tools', icon: '🔤', color: 'from-cyan-400 to-blue-500', route: '/tool/case-converter' },
   { id: '3', name: 'Text Flipper', description: 'Invert or reverse text instantly', category: 'Text Tools', icon: '🔄', color: 'from-cyan-400 to-blue-500' },
   { id: '4', name: 'HTML Stripper', description: 'Remove HTML tags from text', category: 'Text Tools', icon: '🏷️', color: 'from-cyan-400 to-blue-500' },
