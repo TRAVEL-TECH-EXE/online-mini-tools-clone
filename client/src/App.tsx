@@ -27,6 +27,8 @@ import MetaTagGenerator from "./pages/MetaTagGenerator";
 import FaviconGenerator from "./pages/FaviconGenerator";
 import URLSlugGenerator from "./pages/URLSlugGenerator";
 import TextRepeater from "./pages/TextRepeater";
+import URLEncoderDecoder from "./pages/URLEncoderDecoder";
+import HTMLEntityConverter from "./pages/HTMLEntityConverter";
 
 /* Design System: Modern Minimalist with Neon Accents
    - Light theme with off-white background (#F8F8F8)
@@ -62,6 +64,8 @@ function Router() {
       <Route path={"tool/favicon-generator"} component={FaviconGenerator} />
       <Route path={"tool/url-slug-generator"} component={URLSlugGenerator} />
       <Route path={"tool/text-repeater"} component={TextRepeater} />
+      <Route path={"tool/url-encoder"} component={URLEncoderDecoder} />
+      <Route path={"tool/html-entity-converter"} component={HTMLEntityConverter} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

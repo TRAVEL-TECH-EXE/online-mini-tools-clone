@@ -70,6 +70,8 @@ const TOOLS: ToolWithRoute[] = [
 
   // Additional Converters
   { id: '26', name: 'YAML Converter', description: 'Convert between YAML and JSON formats', category: 'Converters', icon: '📄', color: 'from-magenta-400 to-pink-500', route: '/tool/yaml-converter' },
+  { id: '27', name: 'URL Encoder/Decoder', description: 'Encode and decode URLs safely', category: 'Converters', icon: '🔗', color: 'from-magenta-400 to-pink-500', route: '/tool/url-encoder' },
+  { id: '28', name: 'HTML Entity Converter', description: 'Convert between HTML and HTML entities', category: 'Converters', icon: '📝', color: 'from-magenta-400 to-pink-500', route: '/tool/html-entity-converter' },
 ];
 
 const CATEGORIES = ['All', 'Text Tools', 'Converters', 'Calculators', 'Web Tools', 'Image Tools', 'AI Tools'];
